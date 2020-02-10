@@ -16,10 +16,12 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]
 
+  
+
   # GET /microposts
   # GET /microposts.json
   def index
-    @microposts = Micropost.all
+    @microposts = Micropost.paginate(page: params[:page], per_page: 30)
   end
 
   # GET /microposts/1
@@ -76,6 +78,7 @@ class MicropostsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_micropost
@@ -86,4 +89,6 @@ class MicropostsController < ApplicationController
     def micropost_params
       params.require(:micropost).permit(:message, :user_id)
     end
+
+
 end

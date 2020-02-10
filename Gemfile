@@ -11,8 +11,12 @@ gem 'jquery-rails'
 gem 'bootstrap_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
+
+gem 'will_paginate', '~> 3.1.1'
+gem 'pg', '~> 0.21'
+
 # Use Puma as the app server
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails'
@@ -52,6 +56,10 @@ group :development do
   gem 'spring-watcher-listen'
   gem 'annotate'
   gem 'rails-erd'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

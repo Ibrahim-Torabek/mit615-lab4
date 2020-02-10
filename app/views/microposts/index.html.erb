@@ -18,6 +18,7 @@
 
         <tbody>
         <% @microposts.each do |micropost| %>
+	
           <tr>
             <td><%= micropost.message %></td>
             <td><%= link_to micropost.user.email, user_path(micropost.user) %></td>
@@ -32,7 +33,7 @@
         <% end %>
         </tbody>
       </table>
-
+	<%= will_paginate @Micropost %>
       <div class="panel-footer">
         <%= link_to 'New Micropost', new_micropost_path, class: 'btn btn-default' %>
       </div>
